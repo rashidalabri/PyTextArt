@@ -25,11 +25,11 @@ for word in text.lower().split(' '):
 
     # append empty elements to the canvas according to height
     for _ in range(height):
-        canvas.append([])
-    
+        canvas.append([])    
+
     # create the canvas
     for char in word:
-        char_canvas = eval(char)
+        char_canvas = eval(replace_hook(char))
         for char_line in range(height):
             canvas[char_line] = canvas[char_line] + [0] + char_canvas[char_line]
     
